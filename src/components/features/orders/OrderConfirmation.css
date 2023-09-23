@@ -1,0 +1,25 @@
+.order-confirmation-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.order-confirmation {
+  text-align: center;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.confirmation-icon {
+  color: #28a745;
+  font-size: 3rem;
+}
+
+.contact-support {
+  margin-top: 20px;
+  font-size: 14px;
+}

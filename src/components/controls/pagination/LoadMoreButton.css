@@ -1,0 +1,21 @@
+.hover-pagination:hover {
+  background-color: #ffffff;
+  color: #00afef;
+  letter-spacing: 1px;
+  border: 0.12rem solid #00aeef;
+  border-radius: 0px;
+  transition: all 0.2s ease-in-out 0s;
+  border-radius: 0px 0px 6px 6px;
+}
+.hover-pagination {
+    margin: 25px;
+  border-radius: 0px 0px 6px 6px;
+  font-family: "Open Sans", sans-serif;
+  background: #00afef;
+  color: #ffffff;
+  border-radius: 0;
+  line-height: 2;
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-weight: 500;
+}

@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./assets/style/global.css";
+import { Route, Routes, useLocation } from "react-router-dom";
+import Header from "./components/layout/header/Header";
+import Navbar from "./components/layout/navbar/Navbar";
+import routerPath from "./routes/createRoutePath";
+import Toaster from "./components/notifications/Toaster";
+import { pagesWithOutNavbarAndHeader } from "./utils/constants/pages";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+const App = () => {
+  const location = useLocation();
+  const shouldHideNavbarAndHeader = pagesWithOutNavbarAndHeader.includes(
+    location.pathname
   );
-}
+  return (
+    <>
+      <Toaster />
+
+      {!shouldHideNavbarAndHeader && <Header />}
+      {!shouldHideNavbarAndHeader && <Navbar />}
+
+      <Routes>
+        {routerPath.map((route, index) => {
+          return (
+            <Route
+              key={index}
+              exact={route.exact}
+              path={route.path}
+              element={route.element}
+            />
+          );
+        })}
+      </Routes>
+    </>
+  );
+};
 
 export default App;

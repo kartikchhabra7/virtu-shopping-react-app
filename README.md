@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+# Virtu Shopping App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Virtu Shop is an e-commerce shopping application. created with ReactJS and Redux.
+## Features
 
-## Available Scripts
 
-In the project directory, you can run:
+### Product Search
 
-### `npm start`
+With Virtu Shopping's product search feature, finding products has never been easier. Here's how it works:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Search by Product Name:** Use the search bar at the top of the page to enter keywords related to the product you're looking for. As you type, our intelligent search system will instantly display relevant results, making it effortless to discover the items you desire.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Product Sorting
+With Virtu Shopping's product sorting feature, you have the power to organize and filter products based on your preferences. Here's how it works:
 
-### `npm test`
+- **Sort by Price:** Easily sort products by their price, helping you find the best deals or stay within your budget. Click on the "Sort by Price" option to arrange items in ascending or descending order.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Sort by Name:** Looking for specific brands or product names? Click on the "Sort by Name" option to alphabetically arrange products by their names.
 
-### `npm run build`
+- **Sort by Category:** Utilise the category buttons for viewing items within particular categories. Our products are arranged into several categories, and you may filter things by selecting the appropriate category button. You may easily use this option to focus your search and find goods that fall under a particular category.
+### Pagination for Easy Browsing
+Virtu Shopping understands that sometimes you want to explore a wide range of products without feeling overwhelmed.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Load More:** Instead of endlessly scrolling through pages of products, we've simplified the process. Just click on the "Load More" button at the bottom of the product list, and we'll display the next set of products right before your eyes.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Technical Stack
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Front-end: ReactJS, JavaScript, HTML, CSS & CSS-BOOTSTRAP
+- State Management: Redux Toolkit
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Installation and Usage
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Clone the repository.
+- npm install.
+- npm start.
+- Access the application on your local server at http://  localhost:3000.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
