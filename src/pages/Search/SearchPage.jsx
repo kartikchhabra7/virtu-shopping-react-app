@@ -1,18 +1,21 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./SearchPage.css";
 import { useKeyboardShortcut } from "../../utils/helper/layout/searchHelpers";
 import useProductData from "../../hooks/useProductData";
 import ProductCard from "../../components/features/products/ProductCard";
 import Input from "../../components/common/input/Input";
 import usePlaceholder from "../../hooks/usePlaceHolder";
+import { useNavigate } from "react-router-dom";
 
 const SearchPage = () => {
   const [inputClicked, setInputClicked] = useState(false);
-  const hotKeysInputRef = useRef(null);
   const [searchQuery, setSearchQuery] = useState("");
+  const navigate = useNavigate();
+  const hotKeysInputRef = useRef(null);
   const allProducts = useProductData();
   const placeholder = usePlaceholder();
-  function SearchProducts() {
+
+  const SearchProducts = () => {
     const filterProducts = allProducts?.filter((products) => {
       return searchQuery
         ? products.title.toLowerCase().includes(searchQuery.toLowerCase())
@@ -28,20 +31,30 @@ const SearchPage = () => {
         {storeProducts?.length > 0 ? (
           storeProducts
         ) : (
-          <h1>Products not found</h1>
+          <h1
+            className="product-not-found"
+          >
+            Product not found
+          </h1>
         )}
       </>
     );
-  }
+  };
+
+  useEffect(() => {
+    hotKeysInputRef.current.focus();
+  }, []);
 
   useKeyboardShortcut("/", () => {
     hotKeysInputRef.current.focus();
-    setInputClicked(true);
+    setInputClicked(false);
   });
+
   useKeyboardShortcut("ctrl+k", () => {
     hotKeysInputRef.current.focus();
-    setInputClicked(true);
+    setInputClicked(false);
   });
+
   return (
     <>
       <nav className="navbar navbar-expand-lg bg-light">
@@ -71,9 +84,11 @@ const SearchPage = () => {
                 </button>
               )}
             </div>
-            
+
             <div>
-              <button className="btn btn-primary">Back</button>
+              <button className="btn btn-primary" onClick={() => navigate(-1)}>
+                Back
+              </button>
             </div>
           </div>
         </div>
