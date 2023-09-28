@@ -9,9 +9,12 @@ import useProductTitleFilter from "../../hooks/useProductTitleFilter";
 import Dropdown from "../../components/controls/dropdown/DropDown";
 import FilterProductTitle from "../../components/controls/filterButton/FilterProductTitle";
 import { homeLivingButtonCategories } from "../../utils/constants/products";
+import useLoading from "../../hooks/useLoading";
+import LoaderContainer from "../../components/common/loaderbar/LoaderContainer";
 
 const HomeAndLivingPage = () => {
   const allProducts = useProductData();
+  const { hasLoad } = useLoading();
   const homeAndLiving = filterProductByType(allProducts, "homeandliving");
   const { visibleProducts, loadMore, hasLoading, allDataLoaded } =
     useLoadMoreProducts(homeAndLiving.length);
@@ -22,29 +25,39 @@ const HomeAndLivingPage = () => {
     useProductPriceFilter(filteredProducts);
   return (
     <>
-      <div className="container mt-3">
-        <div className="d-flex justify-content-between">
-          <div>
-            {homeLivingButtonCategories.map((title, index) => (
-              <FilterProductTitle //used for filtered data with button
-                key={index}
-                {...{ title, handleCategoryButtonClick, selectedProductTitle }}
-              />
-            ))}
+      {hasLoad ? (
+        <span>
+          <LoaderContainer />
+        </span>
+      ) : (
+        <div className="container mt-3">
+          <div className="d-flex justify-content-between">
+            <div>
+              {homeLivingButtonCategories?.map((title, index) => (
+                <FilterProductTitle //used for filtered data with button
+                  key={index}
+                  {...{
+                    title,
+                    handleCategoryButtonClick,
+                    selectedProductTitle,
+                  }}
+                />
+              ))}
+            </div>
+            <Dropdown {...{ sortProductPrice, handleForPriceFilter }} />
           </div>
-          <Dropdown {...{ sortProductPrice, handleForPriceFilter }} />
-        </div>
-        <div className="container">
-          <div className="row">
-            {filteredProducts?.slice(0, visibleProducts).map((products) => {
-              return <ProductCard key={products.id} products={products} />;
-            })}
+          <div className="container">
+            <div className="row">
+              {filteredProducts?.slice(0, visibleProducts).map((products) => {
+                return <ProductCard key={products.id} products={products} />;
+              })}
+            </div>
           </div>
+          {selectedProductTitle === "All" && (
+            <LoadMoreButton {...{ hasLoading, allDataLoaded, loadMore }} />
+          )}
         </div>
-        {selectedProductTitle === "All" && (
-          <LoadMoreButton {...{ hasLoading, allDataLoaded, loadMore }} />
-        )}
-      </div>
+      )}
     </>
   );
 };
