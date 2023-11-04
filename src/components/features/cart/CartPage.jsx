@@ -24,7 +24,7 @@ const CartPage = () => {
   return (
     <>
       {cartProducts.length >= 1 ? (
-        <h1 className="text-center">My Bag {/**add dynamically user login name */}</h1>
+        <h1 className="text-center mt-3">My Bag {/**add dynamically user login name */}</h1>
       ) : (
         <h1 className="text-center">Oh No! My Cart is Empty,☹️</h1>
       )}
@@ -38,10 +38,10 @@ const CartPage = () => {
 
       {cartProducts.length >= 1 && <CartTotal {...{ total, totalPrice }} />}
 
-      <div className="d-flex justify-content-center align-items-center">
+      <div className="d-flex justify-content-center align-items-center mt-4">
         <Button
           label="Proceed to Payment"
-          className="btn btn-success"
+          className="btn btn-success mb-5"
           onClick={proceedToPayment}
         />
       </div>
