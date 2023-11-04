@@ -1,16 +1,16 @@
 import { useState, useEffect } from "react";
 
-const useLoading = () => {
+const useLoading = (timerDuaration) => {
   const [hasLoad, setHasLoad] = useState(true);
   useEffect(() => {
     const timer = setTimeout(() => {
       setHasLoad(false);
-    }, 500);
+    }, timerDuaration || 500);
 
     return () => {
       clearTimeout(timer);
     };
-  }, []);
+  }, [timerDuaration]);
 
   return { hasLoad };
 };
