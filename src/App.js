@@ -5,19 +5,17 @@ import Header from "./components/layout/header/Header";
 import Navbar from "./components/layout/navbar/Navbar";
 import routerPath from "./routes/createRoutePath";
 import Toaster from "./components/notifications/Toaster";
-import { pagesWithOutNavbarAndHeader } from "./utils/constants/pages";
+import { validRoutes } from "./utils/constants/pages";
 
 const App = () => {
   const location = useLocation();
-  const shouldHideNavbarAndHeader = pagesWithOutNavbarAndHeader.includes(
-    location.pathname
-  );
+  const isCurrnetRouteValid = validRoutes.includes(location.pathname);
   return (
     <>
       <Toaster />
 
-      {!shouldHideNavbarAndHeader && <Header />}
-      {!shouldHideNavbarAndHeader && <Navbar />}
+      {isCurrnetRouteValid && <Header />}
+      {isCurrnetRouteValid && <Navbar />}
 
       <Routes>
         {routerPath.map((route, index) => {

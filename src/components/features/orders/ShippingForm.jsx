@@ -3,6 +3,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import Button from "../../common/button/Button";
 import { validateschema } from "../../../utils/helper/validation/formValidation";
 import { useNavigate } from "react-router-dom";
+import CaptchaContainer from "../googleCaptcha/CaptchaContainer";
 
 const ShippingForm = () => {
   const navigate = useNavigate();
@@ -11,6 +12,7 @@ const ShippingForm = () => {
     console.log(values);
     navigate("/order-confirmed");
   }
+
   return (
     <>
       <Formik
@@ -105,7 +107,13 @@ const ShippingForm = () => {
                 </div>
               </div>
             </div>
-
+            <div className="row mb-4">
+              <div className="col">
+                <div className="form-group">
+                  <CaptchaContainer/>
+                </div>
+              </div>
+            </div>
             <div className="row">
               <div className="col">
                 {
