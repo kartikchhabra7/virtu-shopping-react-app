@@ -2,4 +2,11 @@
     --color-white:#fff;
     --color-dark:#202124;
     --color-light-skyblue:#00AFEF;
+    --color-yellow:#ffff00;
+}
+
+::selection{
+    background-color: var(--color-yellow);
+    color: var(--color-dark);
+    font-weight: 900;
 }
