@@ -1,11 +1,14 @@
 import React from "react";
-import { SwiperSlide } from "swiper/react";
-import Slider from "../slider/Slider";
 import Image from "../image/Images";
-import "./Carousel.css";
 import { useNavigate } from "react-router-dom";
 
-const Carousel = () => {
+import { SwiperSlide, Swiper } from "swiper/react";
+import { Pagination, Navigation, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+const FirstCarousel = () => {
   const sliderAlt = "image not found";
   const navigate = useNavigate();
   const urlOfImage = [
@@ -28,7 +31,20 @@ const Carousel = () => {
   ];
   return (
     <>
-      <Slider>
+      <Swiper
+        slidesPerView={1}
+        spaceBetween={30}
+        loop={true}
+        pagination={{
+          clickable: true,
+        }}
+        autoplay={{
+          delay: 4000,
+        }}
+        navigation={true}
+        modules={[Pagination, Navigation, Autoplay]}
+        className="mySwiper first-carousel"
+      >
         {urlOfImage.map((imageInfo, imageIndex) => {
           return (
             <SwiperSlide key={imageIndex}>
@@ -37,15 +53,15 @@ const Carousel = () => {
                 src={imageInfo.imageUrl}
                 alt={sliderAlt}
                 onClick={imageInfo.route}
-                style={{cursor:'pointer'}}
+                style={{ cursor: "pointer" }}
               />
               {/* </button> */}
             </SwiperSlide>
           );
         })}
-      </Slider>
+      </Swiper>
     </>
   );
 };
 
-export default Carousel;
+export default FirstCarousel;
