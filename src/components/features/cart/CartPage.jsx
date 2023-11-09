@@ -11,7 +11,7 @@ import {
 
 const CartPage = () => {
   const cartProducts = useCartData();
-  
+
   const navigate = useNavigate();
   function proceedToPayment() {
     navigate("/proceed-to-payment");
@@ -20,13 +20,14 @@ const CartPage = () => {
   const total = calculateQuantityOfProducts(cartProducts);
   const totalPrice = calculateTotalOfProducts(cartProducts);
 
-  
   return (
     <>
       {cartProducts.length >= 1 ? (
-        <h1 className="text-center mt-3">My Bag {/**add dynamically user login name */}</h1>
+        <h1 className="text-center mt-3">
+          My Bag {/**add dynamically user login name */}
+        </h1>
       ) : (
-        <h1 className="text-center">Oh No! My Cart is Empty,☹️</h1>
+        <h1 className="text-center mt-3">Oh No! My Cart is Empty,☹️</h1>
       )}
       <div className="container">
         <div className="row">
@@ -38,13 +39,15 @@ const CartPage = () => {
 
       {cartProducts.length >= 1 && <CartTotal {...{ total, totalPrice }} />}
 
-      <div className="d-flex justify-content-center align-items-center mt-4">
-        <Button
-          label="Proceed to Payment"
-          className="btn btn-success mb-5"
-          onClick={proceedToPayment}
-        />
-      </div>
+      {cartProducts.length >= 1 && (
+        <div className="d-flex justify-content-center align-items-center mt-4">
+          <Button
+            label="Proceed to Payment"
+            className="btn btn-success mb-5"
+            onClick={proceedToPayment}
+          />
+        </div>
+      )}
     </>
   );
 };
