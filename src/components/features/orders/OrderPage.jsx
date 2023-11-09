@@ -6,7 +6,6 @@ const OrderPage = () => {
     <>
       <div className="container">
         <div className="row">
-          {/* Proceed to payment */}
           <ShippingForm />
         </div>
       </div>

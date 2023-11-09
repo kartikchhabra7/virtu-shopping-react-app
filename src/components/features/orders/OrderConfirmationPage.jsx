@@ -1,8 +1,11 @@
 import React from "react";
 import { FaCheckCircle } from "react-icons/fa";
 import "./OrderConfirmation.css";
+import { useNavigate } from "react-router-dom";
+import { HOME } from "../../../utils/constants/routerPathVariable";
 
 const OrderConfirmation = () => {
+  const navigate = useNavigate();
   return (
     <>
       <section className="order-confirmation-container">
@@ -12,7 +15,9 @@ const OrderConfirmation = () => {
           </div>
 
           <h1>Thank You for Your Order!</h1>
-          <p>Your order has been successfully delievered within 4-5 working days.</p>
+          <p>
+            Your order has been successfully delievered within 4-5 working days.
+          </p>
           <p>An email with the order details will be sent to you shortly.</p>
 
           <div className="about-me">
@@ -25,10 +30,21 @@ const OrderConfirmation = () => {
           </div>
 
           <p className="contact-support">
-            Contact me: example@gmail.com
+            Contact me:{" "}
+            <span className="text-danger fw-bolder fs-6">
+              kartikchhabra026@gmail.com
+            </span>{" "}
           </p>
         </div>
       </section>
+      <div className="text-center">
+        <button
+          className="btn home-button fs-4 "
+          onClick={() => navigate(HOME)}
+        >
+          Go To Home
+        </button>
+      </div>
     </>
   );
 };

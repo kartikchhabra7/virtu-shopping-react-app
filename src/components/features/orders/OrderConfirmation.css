@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 85vh;
   background-color: #f4f4f4;
 }
 
@@ -22,4 +22,16 @@
 .contact-support {
   margin-top: 20px;
   font-size: 14px;
+}
+
+.home-button {
+  color: #28a745;
+  background: #f4f4f4;
+  border: 1px solid #28a745;
+}
+.home-button:hover {
+  background: #28a745;
+  color: #f4f4f4;
+  border: 1px solid;
+  transition: 1s;
 }
