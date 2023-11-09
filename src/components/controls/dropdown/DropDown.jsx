@@ -11,11 +11,7 @@ const Dropdown = ({ sortedProducts, handleForPriceFilter }) => {
     >
       {categoriesForPriceFilter.map((data) => {
         return (
-          <option
-            key={data.id}
-            value={data.name}
-            style={{ fontWeight: 600}}
-          >
+          <option key={data.id} value={data.name} style={{ fontWeight: 600 }}>
             {data.label}
           </option>
         );
