@@ -1,0 +1,12 @@
+.user-btn {
+  background-color: #8019cb;
+  color: #fff;
+  /* font-size: 20px; */
+  font-family: Poppins, Helvetica Neue, Helvetica, Arial, sans-serif;
+  border: 2px solid #8019cb;
+}
+.user-btn:hover {
+  border: 2px solid #8019cb;
+  background-color: #fff;
+  color: #8019cb;
+}

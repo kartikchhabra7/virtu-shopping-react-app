@@ -110,3 +110,9 @@ const routerPath = [
 ];
 
 export default routerPath;
+
+/* function IsUserLogin() {
+   const { isAuthenticated } = useAuthentication();
+   return isAuthenticated ? <CartPage /> : <UserNotAuthenticated />;
+ }
+*/

@@ -6,6 +6,9 @@ import { useNavigate } from "react-router-dom";
 import CaptchaContainer from "../googleCaptcha/CaptchaContainer";
 import barcode from "../../../assets/images/barcode.png";
 import { ORDER_CONFIRMED } from "../../../utils/constants/routerPathVariable";
+import useAuthentication from "../../../hooks/useAuthentication";
+import LoaderContainer from "../../common/loaderbar/LoaderContainer";
+import UserNotAuthenticated from "../userDetails/UserNotAuthenticated";
 const ShippingForm = () => {
   const navigate = useNavigate();
 
@@ -14,12 +17,25 @@ const ShippingForm = () => {
     navigate(ORDER_CONFIRMED);
   }
 
+  const { user, isLoading, isAuthenticated } = useAuthentication();
+
+  if (isLoading) {
+    return (
+      <div>
+        <LoaderContainer />
+      </div>
+    );
+  }
+  if (!isAuthenticated) {
+    return <UserNotAuthenticated />;
+  }
+
   return (
     <>
       <Formik
         initialValues={{
           name: "",
-          email: "",
+          email: user?.email || "",
           contact: "",
           address: "",
         }}
@@ -27,8 +43,10 @@ const ShippingForm = () => {
         onSubmit={goToConfirmedPage}
       >
         <Form>
-          <h1 className="text-center">
-            Hello ,User {/**Add dynamically user name */}
+          <h1 className="text-center mt-3">
+            Hello, {user?.nickname?.charAt(0)?.toLocaleUpperCase()}
+            {user?.nickname?.slice(1)}
+            {/**Add dynamically user name */}
           </h1>
           <section className="d-flex justify-content-center mt-5">
             <div className="container create-container w-50">
@@ -167,8 +185,8 @@ function PaymentContainer() {
               <img src={barcode} alt="barcode " />
             </h5>
             <h6 className="card-text">
-              Make secure payments using our Paytm gateway. You can pay with
-              confidence.
+              This is a dummy QR code for illustration purposes. It is not
+              functional.
             </h6>
           </div>
           <div className="card-footer text-body-secondary">

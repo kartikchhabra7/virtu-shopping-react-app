@@ -8,23 +8,32 @@ import {
   calculateQuantityOfProducts,
   calculateTotalOfProducts,
 } from "../../../utils/helper/cart/cartHelper";
+import useAuthentication from "../../../hooks/useAuthentication";
+import UserNotAuthenticated from "../userDetails/UserNotAuthenticated";
+import { PROCEED_TO_PAYMENT } from "../../../utils/constants/routerPathVariable";
 
 const CartPage = () => {
   const cartProducts = useCartData();
-
   const navigate = useNavigate();
   function proceedToPayment() {
-    navigate("/proceed-to-payment");
+    navigate(PROCEED_TO_PAYMENT);
   }
 
   const total = calculateQuantityOfProducts(cartProducts);
   const totalPrice = calculateTotalOfProducts(cartProducts);
+  const { user, isAuthenticated } = useAuthentication();
 
+  if (!isAuthenticated) {
+    return <UserNotAuthenticated />;
+  }
   return (
     <>
       {cartProducts.length >= 1 ? (
         <h1 className="text-center mt-3">
-          My Bag {/**add dynamically user login name */}
+          <span>{user?.nickname?.charAt(0)?.toLocaleUpperCase()}</span>
+          <span>{user?.nickname?.slice(1)}</span>
+          <span>'s</span>
+          <span> Bag</span> {/**add dynamically user login name */}
         </h1>
       ) : (
         <h1 className="text-center mt-3">Oh No! My Cart is Empty,☹️</h1>

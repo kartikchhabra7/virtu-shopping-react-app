@@ -5,6 +5,9 @@ import Input from "../../common/input/Input";
 import useCartData from "../../../hooks/useCartData";
 import usePlaceholder from "../../../hooks/usePlaceHolder";
 import { useKeyboardShortcut } from "../../../utils/helper/layout/searchHelpers";
+import UserLogin from "../../features/userDetails/UserLogin";
+import UserLogout from "../../features/userDetails/UserLogout";
+import { SEARCH } from "../../../utils/constants/routerPathVariable";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -12,7 +15,7 @@ const Header = () => {
   const placeholder = usePlaceholder();
   const cartProducts = useCartData();
   const navigateToSearch = () => {
-    navigate("/search");
+    navigate(SEARCH);
   };
   useKeyboardShortcut("ctrl+k", () => {
     hotKeysInputRef.current.focus();
@@ -42,7 +45,7 @@ const Header = () => {
               onClick={navigateToSearch}
               placeholder={placeholder}
               aria-label="Search"
-              style={{ maxWidth: "850px" }}
+              style={{ maxWidth: "750px" }}
             />
 
             <kbd className="searchbar btn btn-dark">ctrl + K</kbd>
@@ -52,17 +55,17 @@ const Header = () => {
             <ul className="navbar-nav">
               <li className="nav-item ">
                 <Link className="nav-link me-3" to="/add-to-cart">
-                  ➕Cart{cartProducts.length}
+                  Cart {cartProducts.length}
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link me-3" aria-current="page" to="#">
-                  👤Login
+                <Link className=" me-3" aria-current="page" to="#">
+                  <UserLogin />
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link me-3" aria-current="page" to="#">
-                  👤Logout
+                <Link className="me-3" aria-current="page" to="#">
+                  <UserLogout />
                 </Link>
               </li>
             </ul>
