@@ -3,6 +3,7 @@ import { FaCheckCircle } from "react-icons/fa";
 import "./OrderConfirmation.css";
 import { useNavigate } from "react-router-dom";
 import { HOME } from "../../../utils/constants/routerPathVariable";
+import Button from "../../common/button/Button";
 
 const OrderConfirmation = () => {
   const navigate = useNavigate();
@@ -31,19 +32,18 @@ const OrderConfirmation = () => {
 
           <p className="contact-support">
             Contact me:{" "}
-            <span className="text-danger fw-bolder fs-6">
+            <span className="text-danger fw-bolder fs-5">
               kartikchhabra026@gmail.com
             </span>{" "}
           </p>
         </div>
       </section>
       <div className="text-center">
-        <button
-          className="btn home-button fs-4 "
+        <Button
+          className="btn home-button fs-4 mt-5 mb-4"
           onClick={() => navigate(HOME)}
-        >
-          Go To Home
-        </button>
+          label="Go To Home"
+        />
       </div>
     </>
   );
