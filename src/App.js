@@ -8,18 +8,19 @@ import Toaster from "./components/notifications/Toaster";
 import { validRoutes } from "./utils/constants/pages";
 import useModalStorage from "./components/notifications/useModalStorage";
 import useAuthentication from "./hooks/useAuthentication";
+import Footer from "./components/layout/footer/Footer";
 
 const App = () => {
-  const {isAuthenticated}=useAuthentication()
+  const { isAuthenticated } = useAuthentication();
   const location = useLocation();
   const isCurrentRouteValid = validRoutes.includes(location.pathname);
-  function Userlogin(){
-    return useModalStorage()
+  function Userlogin() {
+    return useModalStorage();
   }
   const renderUserLogin = !isAuthenticated && <Userlogin />;
   return (
     <>
-    {renderUserLogin}
+      {renderUserLogin}
       <Toaster />
 
       {isCurrentRouteValid && <Header />}
@@ -35,6 +36,7 @@ const App = () => {
           />
         ))}
       </Routes>
+      <Footer />
     </>
   );
 };
