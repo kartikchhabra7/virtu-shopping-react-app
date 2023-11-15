@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
-import handleLinkClick from "../../../utils/helper/layout/navbarHelpers";
+import handleLinkClick from "../../../utils/helper/layout/layoutHelpers";
 
 const Navbar = () => {
   const [isNavbarVisible, setIsNavbarVisible] = useState(false);

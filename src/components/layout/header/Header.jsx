@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Input from "../../common/input/Input";
 import useCartData from "../../../hooks/useCartData";
 import usePlaceholder from "../../../hooks/usePlaceHolder";
-import { useKeyboardShortcut } from "../../../utils/helper/layout/searchHelpers";
+import { useKeyboardShortcut } from "../../../utils/helper/layout/layoutHelpers";
 import UserLogin from "../../features/userDetails/UserLogin";
 import UserLogout from "../../features/userDetails/UserLogout";
 import { SEARCH } from "../../../utils/constants/routerPathVariable";

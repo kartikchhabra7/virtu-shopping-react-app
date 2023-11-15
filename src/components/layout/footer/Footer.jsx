@@ -1,6 +1,6 @@
 import React from "react";
 import "./footer.css";
-import { authenticationUrl } from "../../../utils/helper/layout/footerHelpers";
+import { authenticationUrl } from "../../../utils/helper/layout/layoutHelpers";
 
 const Footer = () => {
   const developerName = "Kartik Chhabra";

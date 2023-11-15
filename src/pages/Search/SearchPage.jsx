@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./SearchPage.css";
-import { useKeyboardShortcut } from "../../utils/helper/layout/searchHelpers";
+import { useKeyboardShortcut } from "../../utils/helper/layout/layoutHelpers";
 import useProductData from "../../hooks/useProductData";
 import ProductCard from "../../components/features/products/ProductCard";
 import Input from "../../components/common/input/Input";
