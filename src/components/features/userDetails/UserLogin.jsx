@@ -16,7 +16,7 @@ const UserLogin = () => {
       {isAuthenticated ? (
         <Button
           className="btn user-btn"
-          onClick={() => loginWithRedirect()}
+          // onClick={() => loginWithRedirect()}
           label={isNameCapitialize()}
         />
       ) : (
