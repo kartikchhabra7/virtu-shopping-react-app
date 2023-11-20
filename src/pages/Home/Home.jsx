@@ -4,7 +4,7 @@ import { ThreeCircles } from "react-loader-spinner";
 import useLoading from "../../hooks/useLoading";
 
 const Home = () => {
-  const { hasLoad } = useLoading(2000);
+  const { hasLoad } = useLoading(800);
   if (hasLoad) {
     return (
       <div className="d-flex justify-content-center align-items-center min-vh-100">
