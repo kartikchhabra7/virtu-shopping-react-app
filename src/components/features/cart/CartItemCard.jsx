@@ -12,7 +12,7 @@ import {
   decrementDataFromCart,
   incrementDataFromCart,
 } from "../../../utils/helper/cart/cartHelper";
-
+import Image from "../../common/image/Images";
 
 const CartItemCard = ({ products }) => {
   const altTitle = "image not found";
@@ -35,11 +35,11 @@ const CartItemCard = ({ products }) => {
         className={`col-xl-3 col-lg-4 col-md-6 col-sm-12 my-5 shadow-lg-5 mb-5`}
       >
         <div className="card">
-          <img
+          <Image
             className="card-img-top"
             src={image}
             alt={altTitle}
-            height={"300px"}
+            style={{ height: "300px" }}
           />
           <div className="card-footer">
             <p className="card-title">
@@ -72,7 +72,7 @@ const CartItemCard = ({ products }) => {
                   </h5>
                 </button>
               ) : (
-                <button className="btn " onClick={()=>handleDecrement(id)}>
+                <button className="btn " onClick={() => handleDecrement(id)}>
                   <h5>
                     <i
                       className="fa-solid fa-minus fa-beat-fade"

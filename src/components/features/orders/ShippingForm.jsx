@@ -9,6 +9,7 @@ import { ORDER_CONFIRMED } from "../../../utils/constants/routerPathVariable";
 import useAuthentication from "../../../hooks/useAuthentication";
 import LoaderContainer from "../../common/loaderbar/LoaderContainer";
 import UserNotAuthenticated from "../userDetails/UserNotAuthenticated";
+import Image from "../../common/image/Images";
 const ShippingForm = () => {
   const navigate = useNavigate();
 
@@ -182,7 +183,7 @@ function PaymentContainer() {
           </div>
           <div className="card-body">
             <h5 className="card-title">
-              <img src={barcode} alt="barcode " />
+              <Image src={barcode} alt="barcode " />
             </h5>
             <h6 className="card-text">
               This is a dummy QR code for illustration purposes. It is not

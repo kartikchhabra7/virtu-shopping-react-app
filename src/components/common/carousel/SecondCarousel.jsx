@@ -15,6 +15,7 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import useProductData from "../../../hooks/useProductData";
 import createUrlOfImages from "../../../utils/constants/homeCarousel";
+import Image from "../image/Images";
 
 const SecondCarousel = () => {
   const allProductsData = useProductData();
@@ -50,7 +51,7 @@ const SecondCarousel = () => {
               onClick={urlOfImages[index].imageUrl}
             >
               <div className="product-card">
-                <img
+                <Image
                   className="product-image"
                   src={products.image}
                   alt={altTitle}

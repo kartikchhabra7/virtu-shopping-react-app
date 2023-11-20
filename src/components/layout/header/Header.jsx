@@ -8,6 +8,7 @@ import { useKeyboardShortcut } from "../../../utils/helper/layout/layoutHelpers"
 import UserLogin from "../../features/userDetails/UserLogin";
 import UserLogout from "../../features/userDetails/UserLogout";
 import { SEARCH } from "../../../utils/constants/routerPathVariable";
+import Image from "../../common/image/Images";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -25,11 +26,10 @@ const Header = () => {
       <nav className="navbar navbar-expand-lg bg-light">
         <div className="container-fluid ms-5">
           <Link className="navbar-brand" to="/">
-            <img
+            <Image
               src="https://thumbs.dreamstime.com/b/lets-shopping-logo-design-template-shop-icon-135610500.jpg"
-              alt=""
-              width="80px"
-              height="75px"
+              alt="virtu shoppping logo"
+              style={{ width: "80px", height: "75px" }}
             />
           </Link>
 

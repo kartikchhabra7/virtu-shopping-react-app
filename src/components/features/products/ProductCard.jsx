@@ -14,6 +14,7 @@ import { useDispatch } from "react-redux";
 import { showSuccessNotification } from "../../notifications/notificationService";
 import useCartData from "../../../hooks/useCartData";
 import { quantityConfirmation } from "../../notifications/quantityConfirmation";
+import Image from "../../common/image/Images";
 
 const ProductCard = ({ products }) => {
   // const { isValueStored, updateValue } = useLocalStorage(
@@ -47,11 +48,11 @@ const ProductCard = ({ products }) => {
         className={`col-xl-3 col-lg-4 col-md-6 col-sm-12 my-5 shadow-lg-5 mb-5         }`}
       >
         <div className="card">
-          <img
+          <Image
             className="card-img-top"
             src={products.image}
             alt={altTitle}
-            height={"300px"}
+            style={{ height: "300px" }}
           />
           <div className="card-footer">
             <p className="card-title">
