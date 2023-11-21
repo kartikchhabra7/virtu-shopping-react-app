@@ -1,12 +1,12 @@
-# Virtu Shopping App
+# **Virtu Shopping App**
 
 Virtu Shop is an e-commerce shopping application. created with ReactJS and Redux.
 
-## Deployment
+## **Deployment**
 
 The live production version of My Virtu Shopping App is hosted at **[Explore Shopping App](https://virtu-shopping.netlify.app/)**
 
-## Features
+## **Features**
 
 ### Product Search
 
@@ -44,20 +44,22 @@ Certain features in Virtu Shopping App, such as accessing the Cart and Payment p
 
 To enjoy the full benefits of Virtu Shopping App, please [sign up](#) or [log in](#) if you already have an account.
 
-## Technical Stack
+## **Technical Stack**
 
 - **Front-end:** ReactJS, JavaScript, HTML, CSS & CSS-BOOTSTRAP
 - **State Management:** Redux Toolkit
 - **Authentication:** Auth0
 
-## Installation and Usage
+## **Installation and Usage**
 
+```bash
 - Clone the repository.
 - npm install.
 - npm start.
 - Access the application on your local server at http:// localhost:3000.
+```
 
-## API Reference
+## **API Reference**
 
 | Parameter              | Type     | Description                                                                                 |
 | :--------------------- | :------- | :------------------------------------------------------------------------------------------ |
