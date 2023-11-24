@@ -13,7 +13,7 @@ import { useDispatch } from "react-redux";
 
 import { showSuccessNotification } from "../../notifications/notificationService";
 import useCartData from "../../../hooks/useCartData";
-import { quantityConfirmation } from "../../notifications/quantityConfirmation";
+import { quantityConfirmation } from "../../notifications/notificationService";
 import Image from "../../common/image/Images";
 
 const ProductCard = ({ products }) => {

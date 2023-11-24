@@ -6,7 +6,7 @@ import {
   productTitle,
 } from "../../../utils/helper/products/productHelper";
 import { removeCart } from "../../../store/reducer/cartSlicer";
-import { deleteConfirmation } from "../../notifications/deleteConfirmation";
+import { deleteConfirmation } from "../../notifications/notificationService";
 import { useDispatch } from "react-redux";
 import {
   decrementDataFromCart,
