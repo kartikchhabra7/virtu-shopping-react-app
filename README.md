@@ -30,6 +30,18 @@ Virtu Shopping understands that sometimes you want to explore a wide range of pr
 
 - **Load More:** Instead of endlessly scrolling through pages of products, we've simplified the process. Just click on the "Load More" button at the bottom of the product list, and we'll display the next set of products right before your eyes.
 
+### Coupon Code
+
+Enjoy exclusive discounts with Virtu Shopping's coupon code feature! By entering a valid coupon code during checkout, you can unlock fantastic savings on your purchases. Here's how it works:
+
+- **10% Discount:** Enter an existing coupon code at the designated field during checkout, and instantly receive a 10% discount on eligible items in your cart. It's a great way to save while enjoying a seamless shopping experience.
+
+- **Limited-Time Offers:** Keep an eye out for special promotions and limited-time coupon code offers. We regularly update our discounts, so you can always find exciting deals on a wide range of products.
+
+- **Enhanced Shopping Experience:** Our coupon code feature adds an extra layer of value to your shopping journey. Experience the joy of saving while discovering quality products tailored to your preferences.
+
+***Note :  This is just a practice Virtu Shopping App, and the coupon code benefits mentioned here are for demonstration purposes only. They may not represent actual promotions or offers.***
+
 ### Google reCAPTCHA Integration (for Demonstration Purposes)
 
 Enhance the security, even in our dummy app! We've integrated Google reCAPTCHA just to show you how easy it is. While this is a dummy app and not handling real-world threats, you can still experience the added layer of security that reCAPTCHA provides.
