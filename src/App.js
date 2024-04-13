@@ -9,6 +9,7 @@ import { validRoutes } from "./utils/constants/pages";
 import useModalStorage from "./components/notifications/useModalStorage";
 import useAuthentication from "./hooks/useAuthentication";
 import Footer from "./components/layout/footer/Footer";
+import CouponCodeHeader from "./components/features/couponCode/CouponCode";
 
 const App = () => {
   const { isAuthenticated } = useAuthentication();
@@ -22,7 +23,7 @@ const App = () => {
     <>
       {renderUserLogin}
       <Toaster />
-
+      <CouponCodeHeader />
       {isCurrentRouteValid && <Header />}
       {isCurrentRouteValid && <Navbar />}
 

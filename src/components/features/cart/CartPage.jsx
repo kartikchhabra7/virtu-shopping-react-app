@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useCartData from "../../../hooks/useCartData";
 import CartItemCard from "./CartItemCard";
@@ -11,20 +11,34 @@ import {
 import useAuthentication from "../../../hooks/useAuthentication";
 import UserNotAuthenticated from "../userDetails/UserNotAuthenticated";
 import { PROCEED_TO_PAYMENT } from "../../../utils/constants/routerPathVariable";
+import { COUPON_CODE_KART10 } from "../../../utils/constants/constants";
 
 const CartPage = () => {
+  const [discountPercentage, setDiscountPercentage] = useState(0);
   const cartProducts = useCartData();
   const navigate = useNavigate();
   function proceedToPayment() {
     navigate(PROCEED_TO_PAYMENT);
   }
 
-  const total = calculateQuantityOfProducts(cartProducts);
-  const totalPrice = calculateTotalOfProducts(cartProducts);
+  const totalQuantity = calculateQuantityOfProducts(cartProducts);
+  const totalPriceBeforeDiscount = calculateTotalOfProducts(cartProducts);
+  const totalPriceAfterDiscount =
+    totalPriceBeforeDiscount * (1 - discountPercentage / 100);
   const { user, isAuthenticated } = useAuthentication();
 
   if (!isAuthenticated) {
     return <UserNotAuthenticated />;
+  }
+
+  function applyCouponCode(couponCode) {
+    if (couponCode === COUPON_CODE_KART10) {
+      setDiscountPercentage(10);
+    } else {
+      setDiscountPercentage(0);
+    }
+    // const discount = parseInt(couponCode) || 0;
+    // setDiscountPercentage(discount);       // If I write this logic, then it will discount the value you write in the input field.
   }
   return (
     <>
@@ -46,7 +60,11 @@ const CartPage = () => {
         </div>
       </div>
 
-      {cartProducts.length >= 1 && <CartTotal {...{ total, totalPrice }} />}
+      {cartProducts.length >= 1 && (
+        <CartTotal
+          {...{ totalQuantity, totalPriceAfterDiscount, applyCouponCode }}
+        />
+      )}
 
       {cartProducts.length >= 1 && (
         <div className="d-flex justify-content-center align-items-center mt-4">

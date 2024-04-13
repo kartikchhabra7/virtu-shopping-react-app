@@ -10,12 +10,16 @@ import useAuthentication from "../../../hooks/useAuthentication";
 import LoaderContainer from "../../common/loaderbar/LoaderContainer";
 import UserNotAuthenticated from "../userDetails/UserNotAuthenticated";
 import Image from "../../common/image/Images";
+import { useDispatch } from "react-redux";
+import { emptyCart } from "../../../store/reducer/cartSlicer";
 const ShippingForm = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   function goToConfirmedPage(values) {
     console.log(values);
     navigate(ORDER_CONFIRMED);
+    dispatch(emptyCart());
   }
 
   const { user, isLoading, isAuthenticated } = useAuthentication();
@@ -47,7 +51,7 @@ const ShippingForm = () => {
           <h1 className="text-center mt-3">
             Hello, {user?.nickname?.charAt(0)?.toLocaleUpperCase()}
             {user?.nickname?.slice(1)}
-            {/**Add dynamically user name */}
+            {/**Added dynamically user name */}
           </h1>
           <section className="d-flex justify-content-center mt-5">
             <div className="container create-container w-50">
