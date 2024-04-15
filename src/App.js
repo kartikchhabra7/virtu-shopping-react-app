@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./assets/style/global.css";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Header from "./components/layout/header/Header";
@@ -15,10 +15,18 @@ const App = () => {
   const { isAuthenticated } = useAuthentication();
   const location = useLocation();
   const isCurrentRouteValid = validRoutes.includes(location.pathname);
+
   function Userlogin() {
     return useModalStorage();
   }
+
   const renderUserLogin = !isAuthenticated && <Userlogin />;
+
+  useEffect(() => {
+    document.addEventListener("contextmenu", (event) => {
+      event.preventDefault();
+    });
+  }, []);
   return (
     <>
       {renderUserLogin}
